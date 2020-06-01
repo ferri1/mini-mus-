@@ -1,39 +1,43 @@
-<?php include "include/head.php" ?>
+<?php
+
+include "../config.php";
+
+if(!empty($_SESSION["droit_connexion"])) {
+  header("location:administration.php");
+  exit;
+}
+
+ ?>
+
+<!doctype html>
+<html lang="fr">
+
+<?php
+  include "../templates/include/head.php";
+?>
 
 
-  <div class="main">
+<body class="bgBlue">
+  <div class="bgWhite marg10">
+    <main class="padtopbot10">
+      <h1 class="tcenter fontBlue font3">Mon Formulaire naïf</h1>
+      <form method="post" action="reponse_connexion.php" class="flex column aicenter padtopbot10">
+          <div class="padbot3">
+              <label>Identifiant</label>
+              <input type="text" name="identifiant">
+          </div>
 
-    <h2>formulaire de connexion</h2>
+          <div class="padbot3">
+              <label>Mot de passe</label>
+              <input type="password" name="password">
+          </div>
 
-    <form class="" action="verifier_reponses.php" method="post">
+          <div class="part-valider padbot3">
+              <button type="submit">login</button>
+          </div>
+      </form>
 
-      <!-- Fonctions -->
-      <?php if (!empty($_POST['err']) && $_POST['err'] == 'champ') {
-          echo "<div class=\"error\">";
-          echo "merci de vérifier que tous les champs soient remplis";
-          echo "</div>";
-          }
-          function addClassErreurChamp($champVide) {
-            if (!empty($_POST['problemechamp']) && $_POST['problemechamp'] == $champVide) {
-              echo "erreurchamp";
-            }
-          }
-         ?>
-         <!-- fin fonctions -->
-
-      <div class="champ <?php addClassErreurChamp("email"); ?>">
-        <label for="email">email : </label>
-        <input name="email" type="email"><br>
-      </div>
-      <div class="champ <?php addClassErreurChamp("password"); ?>">
-        <label for="password">mot de passe : </label>
-        <input name="password" type="password"><br>
-      </div>
-
-      <button type="submit">valider</button>
-
-    </form>
-
+    </main>
   </div>
-
-<?php include "include/footer.php" ?>
+</body>
+</html>
