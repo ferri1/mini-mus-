@@ -1,7 +1,19 @@
-<?php include  "include/head.php"; ?>
-  <body>
-    <?php include "include/navigation.php"; ?>
-    <main>
+<?php  include "config.php";
+ include "include/head.php";
+?>
+
+
+  <body class="bgBlue">
+
+  <div class="bgWhite marg10">
+      <?php include $_dossier_template . "include/navigation.php"; ?>
+    <main class="padtopbot10 paddinglr10">
+        <h2 class="font2 padbot3 fontBlue">Accueil</h2>
+        <div class="tjustify lineheight15">
+          <?php
+            echo nl2br(file_get_contents(__DIR__ . "/../admin/inscription.txt"));
+          ?>
+        </div>
 
       <div class="container">
           <img src="templates/images/musee1.jpg" alt="fond">
@@ -13,6 +25,8 @@
                 </p>
               </div>
       </div>
+
+
 
 
       <h2>L'un des musée les plus rare au monde</h2>
@@ -51,5 +65,6 @@
     </footer>
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>

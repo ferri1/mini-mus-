@@ -17,7 +17,8 @@
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <html lang="fr">
 
   <?php
@@ -27,7 +28,7 @@
 <body class="bgBlue">
   <div class="bgWhite marg10">
     <main class="padtopbot10">
-      <h1 class="tcenter fontBlue font3 padbot3">Ma petite administration naïve</h1>
+      <h1 class="tcenter fontBlue font3 padbot3"> administration lynda</h1>
       <p class="tcenter fontBlue font15 padbot10">Modifiez ici le contenu de la page d'accueil</p>
 
       <form method="post" action="administration.php" enctype="multipart/form-data" class="fontBlue font15">
